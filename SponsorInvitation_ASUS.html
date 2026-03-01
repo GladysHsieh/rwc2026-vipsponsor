@@ -14,7 +14,7 @@
         h1 { font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: 600; color: #FFD700; margin: 0 0 10px 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.9); line-height: 1.2; }
         h2 { font-family: 'Noto Sans TC', 'Montserrat', sans-serif; font-size: 24px; font-weight: 560; color: #ffffff; margin: 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.9); display: inline-block; border-bottom: 3px solid #FFD700; padding-bottom: 3px; }
         .salutation-area { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 5px; text-shadow: 1px 1px 3px rgba(0,0,0, 0.9); }
-        .content-row { display: flex; gap: 20px; align-items: flex-start; margin-left: 10px; }    
+        .content-row { display: flex; gap: 20px; align-items: flex-start; margin-left: 10px; }
         .info-col { flex: 0.9; display: flex; flex-direction: column; justify-content: center; background: rgba(255,255,255, 0.1); backdrop-filter: blur(5px); padding: 15px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); text-align: left; text-shadow: 1px 1px 3px rgba(0,0,0, 0.9); height: auto; }
         .info-item { margin-bottom: 10px; font-size: 12px; border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 10px; }
         .info-item:last-child { border-bottom: none; }
@@ -29,6 +29,7 @@
         .msg-signature { margin-top: 15px; }
         .footer { background-color: white; padding: 15px 25px; border-top: 5px solid #800000; flex-shrink: 0; }
         .sponsor-logos { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 18px; }
+        .sponsor-logos img { height: auto; width: auto; object-fit: contain; }
         @media print { @page { size: landscape; margin: 0; } .container { width: 100%; box-shadow: none; margin: 0; } .main-content { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .cal-btn { display: none; } }
         @media screen and (max-width: 900px) { .content-row { flex-direction: column-reverse; gap: 30px; margin-left: 0; } .message-split { flex-direction: column; } }
     </style>
@@ -59,11 +60,11 @@
                 <div class="message-box-container">
                     <div class="message-split">
                         <div class="msg-en">
-                            <p>Dear Mr. Alex Chang,<br><span style="font-size: 0.85em; color: #FFD700;">Senior Director, ASUS</span><br><br>
-                            We cordially invite you to attend the Reception on March 9, together with the President and Board Members of the IACR. Your presence would highlight our nation’s strong commitment to cryptography and information security research.</p>
+                            <p>Dear Mr. Alex Chang,<br><span style="font-size: 0.85em; color: #FFD700; font-weight: bold;">Senior Director, ASUS</span><br><br>
+                            We cordially invite you to attend the Reception on March 9, together with the President and Board Members of the IACR.<br><br>Your presence would highlight our nation’s strong commitment to cryptography and information security research and further enhance Taiwan’s visibility within the international academic community.</p>
                         </div>
                         <div class="msg-zh">
-                            <p>誠摯邀請 張宏昌 Senior Director<br><br>於 115 年 3 月 9 日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。<br><br>國際密碼學會（IACR）理事長及多位理事將在晚宴中與各界菁英交流。您的蒞臨，展現臺灣對密碼學實作於資通安全研究之重視，更提升國際產學合作能見度。</p>
+                            <p>誠摯邀請 張宏昌 Senior Director<br><br>於中華民國 115 年 3 月 9 日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。<br><br>國際密碼學會（IACR）理事長及多位理事將在晚宴中與各界菁英交流。您的蒞臨，展現臺灣對密碼學實作於資通安全研究之重視，更提升國際產學合作能見度。</p>
                             <div class="msg-signature"><strong>楊柏因 Bo-Yin Yang<br>鐘楷閔 Kai-Min Chung</strong><br>General Co-Chairs</div>
                         </div>
                     </div>
@@ -71,7 +72,7 @@
             </div>
         </div>
         <div class="footer"><div class="sponsor-logos">
-            <img src="images/spon_aws.svg" alt="AWS" style="height: 20px;"><img src="images/spon_apple.jpg" alt="APPLE" style="height: 25px;"><img src="images/spon_AHIT.png" alt="AHIT" style="height: 18px;"><img src="images/spon_asus.png" alt="ASUS" style="height: 28px;"><img src="images/spon_google.png" alt="Google" style="height: 20px;"><img src="images/spon_mtk.png" alt="MTK" style="height: 25px;">
-            </div></div>
+            <img src="images/spon_aws.svg" alt="AWS" style="height: 20px;"><img src="images/spon_apple.jpg" alt="APPLE" style="height: 25px;"><img src="images/spon_AHIT.png" alt="AHIT" style="height: 18px;"><img src="images/spon_asus.png" alt="ASUS" style="height: 28px;"><img src="images/spon_BBG.png" alt="Bloomberg" style="height: 28px;"><img src="images/spon_chelpis.png" alt="Chelpis" style="height: 45px;"><img src="images/spon_cht.jpg" alt="CHT" style="height: 39px;"><img src="images/spon_chtSecurity.png" alt="CHTSecurity" style="height: 33px;"><img src="images/spon_crx.png" alt="CRX" style="height: 20px;"><img src="images/spon_crypto_consulting.png" alt="Crypto" style="height: 35px;"><img src="images/spon_cryspen.png" alt="Cryspen" style="height: 13px;"><img src="images/spon_cycraft.png" alt="CyCraft" style="width: 90px;"><img src="images/spon_deloitte.jpg" alt="Deloitte" style="height: 58px;"><img src="images/spon_emxps.png" alt="eMxPs" style="height: 25px;"><img src="images/spon_google.png" alt="Google" style="height: 20px;"><img src="images/spon_hitcon.png" alt="HITCON" style="height: 48px;"><img src="images/spon_imei.png" alt="IMEI" style="height: 45px;"><img src="images/spon_interoplabs.png" alt="INTEROP" style="height: 35px;"><img src="images/spon_jmem.jpg" alt="JMEM" style="height: 32px;"><img src="images/spon_mtk.png" alt="MTK" style="height: 25px;"><img src="images/spon_meta.png" alt="META" style="height: 30px;"><img src="images/spon_mozilla.png" alt="Mozilla" style="height: 15px;"><img src="images/spon_ncc.png" alt="NCC" style="height: 65px;"><img src="images/spon_nics.png" alt="NICS" style="height: 42px;"><img src="images/spon_nxp.png" alt="NXP" style="height: 28px;"><img src="images/spon_PQShield.png" alt="PQ" style="height: 14px;"><img src="images/spon_sandbox.png" alt="Sandbox" style="height: 16px;"><img src="images/spon_tqc.png" alt="TQC" style="height: 40px;"><img src="images/spon_tii.png" alt="TII" style="height: 35px;"><img src="images/spon_tinfoil.png" alt="Tinfoil" style="height: 15px;"><img src="images/spon_ttc.png" alt="TTC" style="height: 33px;"><img src="images/spon_verisign.png" alt="VERSIGN" style="height: 55px;"><img src="images/spon_wisecure.png" alt="WiSECURE" style="height: 22px;"><img src="images/spon_yubico.png" alt="Yubico" style="height: 15px;"><img src="images/spon_zama.png" alt="Zama" style="height: 35px;"><img src="images/spon_zcash.png" alt="Zcash" style="height: 45px;"><img src="images/spon_zeroRISC.png" alt="zero" style="height: 30px;">
+        </div></div>
     </div>
 </body></html>
