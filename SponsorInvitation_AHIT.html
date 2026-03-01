@@ -1,364 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RWC 2026 Invitation (Final Layout)</title>
+    <title>RWC 2026 Invitation - AHIT</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #555;
+            margin: 0; padding: 0; background-color: #555;
             font-family: 'Noto Sans TC', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
         }
 
         .container {
-            width: 85%;
-            max-width: 1000px;
-            background-color: white;
+            width: 85%; max-width: 1000px; background-color: white;
             box-shadow: 0 0 25px rgba(0,0,0,0.6);
-            display: flex;
-            flex-direction: column;
-            margin: 15px auto;
+            display: flex; flex-direction: column; margin: 20px auto;
         }
 
         /* --- 1. Header --- */
         .header {
-            background-color: white;
-            padding: 15px 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            border-bottom: 1px solid #eee;
+            background-color: white; padding: 15px 35px;
+            display: flex; justify-content: center; align-items: center;
+            flex-wrap: wrap; gap: 15px; border-bottom: 1px solid #eee;
         }
-        
-        .header img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-        .header img.long { height: 40px; }
+        .header img { height: 50px; width: auto; object-fit: contain; }
 
         /* --- 2. Main Content --- */
         .main-content {
-            flex: 1;
-            position: relative;
+            flex: 1; position: relative;
             background-image: url('images/bg.png'); 
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            padding: 10px 35px;
-            color: white;
-            background-color: #222;
+            background-size: cover; background-position: center center;
+            padding: 20px 35px; color: white; background-color: #222;
         }
 
-        .title-area {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+        .title-area { text-align: center; margin-bottom: 25px; }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 30px; color: #FFD700; text-shadow: 2px 2px 5px rgba(0,0,0,0.9); margin: 0; }
+        h2 { font-size: 24px; color: #ffffff; border-bottom: 3px solid #FFD700; padding-bottom: 3px; display: inline-block; margin-top: 10px; }
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 30px;
-            font-weight: 600;
-            color: #FFD700;
-            margin: 0 0 10px 0;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
-            line-height: 1.2;
-        }
+        .salutation-area { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 15px; text-shadow: 1px 1px 3px rgba(0,0,0, 0.9); }
 
-        h2 {
-            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 560;
-            color: #ffffff;
-            margin: 0;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
-            display: inline-block;
-            border-bottom: 3px solid #FFD700;
-            padding-bottom: 3px;
-        }
+        .content-row { display: flex; gap: 20px; align-items: flex-start; margin-left: 20px; }    
 
-        /* 致詞區塊 */
-        .salutation-area {
-            text-align: center;  
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px; 
-            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
-        }
-
-	/* --- 核心佈局 --- */
-        .content-row {
-            display: flex;
-            gap: 20px; 
-            align-items: flex-start; 
-            margin-left: 60px; 
-        }    
-
-        /* --- 左側：資訊欄 --- */
+        /* 左側資訊欄：強化換行與高度彈性 */
         .info-col {
-            flex: 2.5; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: rgba(255,255,255, 0.1); 
-            backdrop-filter: blur(5px);
-            padding: 15px; 
-            border-radius: 5px;
-            border: 1px solid rgba(255,255,255,0.2);
-            text-align: left;
-            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
-            height: auto; 
+            flex: 1.2; background: rgba(255,255,255, 0.1); backdrop-filter: blur(5px);
+            padding: 20px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2);
+            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9); height: auto;
         }
-        .info-item {
-            margin-bottom: 10px;
-            font-size: 12px;
-            border-bottom: 1px dashed rgba(255,255,255,0.3);
-            padding-bottom: 10px;
-        }
-                
-        .info-label {
-            color: #FFD700;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-            display: block;
-            margin-bottom: 8px;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        .info-value {
-    		font-weight: 600;
-    		line-height: 1.5;        /* 加大行距，換行後字才不會疊在一起 */
-    		display: block;         /* 確保它是塊狀顯示 */
-    		white-space: normal;    /* 強制允許正常換行 */
-    		word-break: break-all;  /* 避免英文單字過長衝出邊框 */
-		}
+        .info-item { margin-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 10px; }
+        .info-label { color: #FFD700; font-weight: 600; font-size: 13px; display: block; margin-bottom: 5px; }
+        .info-value { font-weight: 600; line-height: 1.6; display: block; white-space: normal; }
 
-/* 針對資訊欄位的項目增加一點間距，避免換行後擠在一起 */
-		.info-item {
-    		margin-bottom: 15px;    /* 稍微加大項目的下方間距 */
-    		height: auto;           /* 確保高度隨內容增長 */
-		}
+        /* 行事曆按鈕樣式 */
+        .cal-btn {
+            display: inline-block; margin-top: 10px; padding: 8px 12px;
+            background-color: #FFD700; color: #000; text-decoration: none;
+            font-size: 12px; font-weight: bold; border-radius: 4px;
+            transition: transform 0.2s;
+        }
+        .cal-btn:hover { transform: scale(1.05); background-color: #fff; }
 
-        .qr-sig-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 5px;
-        }
-        .qr-img {
-            width: 100px; 
-            height: 100px; 
-            border-radius: 0; 
-            object-fit: contain;
-            background-color: white;
-            padding: 5px; 
-            border: 2px solid rgba(255,255,255,0.5);
-        }
-        .signature-block {
-            font-size: 12px;
-            color: #eee;
-            line-height: 1.15;
-        }
-        .signature-block strong { color: white; font-size: 14px; }
-
-        /* --- 右側：主文欄 --- */
+        /* 右側主文欄 */
         .message-box-container {
-   		 background: rgba(0,0,0, 0.5);
-    		padding: 20px 25px; 
-    		border-radius: 12px;
-    		display: flex;
-    		flex-direction: column;
-    		height: auto;        /* 確保高度隨內容自動增長 */
-    		min-height: 250px;   /* 給一個最小高度，但不鎖死最大高度 */
-    		overflow: visible;   /* 確保內容超出時不會被隱藏 */
-		   	width: 90%;
-    		margin: 0 auto;
-}
+            flex: 2; background: rgba(0,0,0, 0.5); padding: 25px; border-radius: 12px;
+            width: 100%; height: auto;
+        }
+        .message-split { display: flex; gap: 20px; }
+        .msg-en, .msg-zh { flex: 1; font-size: 14px; line-height: 1.8; text-shadow: 1px 1px 2px black; }
+        .msg-en { border-right: 1px solid rgba(255,255,255, 0.3); padding-right: 20px; }
 
-		.message-split {
-    		display: flex;
-    		gap: 10px;
-    		height: auto;        /* 從 80% 改為 auto，防止高度被限制 */
-}
+        .qr-img { width: 100px; height: 100px; background-color: white; padding: 5px; margin-top: 10px; }
 
-        .msg-en, .msg-zh {
-            flex: 1;
-            font-size: 14px;
-            line-height: 1.7;
-            text-shadow: 1px 1px 2px black;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .msg-en {
-            border-right: 1px solid rgba(255,255,255, 0.3);
-            padding-right: 30px;
-        }
+        /* --- 3. Footer --- */
+        .footer { background-color: white; padding: 15px 25px; border-top: 5px solid #800000; }
+        .sponsor-logos { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 18px; }
 
-        .msg-p { margin-top: 0; margin-bottom: 10px; }
-        
-        .msg-signature {
-            margin-top: auto; 
-            padding-top: 15px;
-        }
-
-        /* --- 3. Footer (Sponsor Logos) --- */
-        .footer {
-            background-color: white;
-            padding: 15px 25px;
-            border-top: 5px solid #800000;
-        }
-        .sponsor-logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0px 18px; 
-        }
-
-        /* --- RWD 手機版調整 --- */
-        @media screen and (max-width: 900px) {
-            .content-row { flex-direction: column-reverse; gap: 30px; }
-            .message-split { flex-direction: column; gap: 20px; }
-            .msg-en { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 20px; }
-            .header img { height: 35px !important; } 
-            .sponsor-logos { justify-content: center; }
-            .sponsor-logos img { height: 35px !important; width: auto !important; }
-        }
-        
+        /* --- 列印優化 (核心功能) --- */
         @media print {
-             @page { size: landscape; margin: 0; }
-             .container { width: 90%; box-shadow: none; margin: 0; }
-             .main-content { -webkit-print-color-adjust: exact; }
+            body { background: white; }
+            .container { width: 100%; box-shadow: none; margin: 0; border: none; }
+            .main-content { 
+                background-image: url('images/bg.png') !important; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+                color: white !important;
+            }
+            .cal-btn { display: none; } /* 列印時隱藏按鈕 */
+            .info-col { background: rgba(0,0,0, 0.3) !important; border: 1px solid #666; }
+            .footer { border-top: 3px solid #800000; }
+        }
+
+        /* 手機版適應 */
+        @media screen and (max-width: 800px) {
+            .content-row { flex-direction: column; margin-left: 0; }
+            .message-split { flex-direction: column; }
+            .msg-en { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 15px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
         <div class="header">
-            <img src="images/logo_iacr.png" style="height: 50px;" alt="IACR">
-            <img src="images/logo_as.png" style="height: 50px;" alt="Academia Sinica" class="long">
-            <img src="images/logo_iis.jpg" style="height: 45px;" alt="IIS">
-            <img src="images/logo_citi.jpg" style="height: 45px;" alt="CITI" class="long">
+            <img src="images/logo_iacr.png" alt="IACR">
+            <img src="images/logo_as.png" alt="Academia Sinica">
+            <img src="images/logo_iis.jpg" alt="IIS">
+            <img src="images/logo_citi.jpg" alt="CITI">
             <div style="width: 1px; height: 30px; background: #ddd; margin: 0 10px;"></div>
-            <img src="images/logo_ccisa.jpg" style="height: 55px;" alt="CCISA">
-            <img src="images/logo_nstc.png" style="height: 25px;" alt="NSTC" class="long">
-            <img src="images/logo_mice.png" style="height: 32px;" alt="MICE" class="long">
+            <img src="images/logo_ccisa.jpg" alt="CCISA">
+            <img src="images/logo_nstc.png" alt="NSTC">
+            <img src="images/logo_mice.png" alt="MICE">
         </div>
 
         <div class="main-content">
-            
             <div class="title-area">
                 <h1>Real World Crypto Symposium 2026</h1>
                 <h2>Reception｜歡迎晚宴</h2>
             </div>
 
-            <div class="salutation-area">
-                台灣駭客協會 翁浩正 理事長 鈞啟
-            </div>
+            <div class="salutation-area">台灣駭客協會 翁浩正 理事長 鈞啟</div>
 
             <div class="content-row">
-                
                 <div class="info-col">
                     <div class="info-item">
                         <span class="info-label">📅 DATE / 日期</span>
                         <span class="info-value">March 9, 2026 (Mon)<br>18:45 - 20:45</span>
+                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=RWC+2026+Reception&dates=20260309T104500Z/20260309T124500Z&details=Real+World+Crypto+Symposium+2026+Reception&location=Taipei+Marriott+Hotel+5F+Marriott+Hall" target="_blank" class="cal-btn">📅 加入 Google 日曆</a>
                     </div>
                     
                     <div class="info-item">
                         <span class="info-label">📍 VENUE / 地點</span>
-                        <span class="info-value">Taipei Marriott Hotel<br>5F Marriott Hall<br>台北萬豪酒店5樓<br> 萬豪廳</span>
+                        <span class="info-value">
+                            Taipei Marriott Hotel<br>5F Marriott Hall<br>台北萬豪酒店5樓<br>萬豪廳
+                        </span>
                     </div>
-                    <div class="qr-sig-row">
-                        <img src="images/qrcode.png" alt="RSVP QR" class="qr-img">
-                        <div class="signature-block">
-                        </div>
-                    </div>
+                    <img src="images/qrcode.png" alt="RSVP QR" class="qr-img">
                 </div>
 
-                <div class="message-col">
-                    <div class="message-box-container">
-                        <div class="message-split">
-                            <div class="msg-en">
-                                <p class="msg-p">Dear Mr. Allen Own <br>
-<span style="font-size: 0.8em;"> Chairman, Association of Hackers in Taiwan</span>
-<br>
-<br>
-<span style="font-size: 0.9em;">We cordially invite you to attend the Reception on March 9, together with the President and Board Members of the IACR.<br><br>
-Your presence would highlight our nation’s strong commitment to cryptography and information security research and further enhance Taiwan’s visibility within the international academic community.</span></p>
-                            </div>
-                            
-                            <div class="msg-zh">
-                                <p class="msg-p">誠摯邀請翁浩正 理事長<br><br>於中華民國115年3月9日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。<br>國際密碼學會（IACR）理事長及多位理事將在晚宴中與各界菁英交流。翁理事長的蒞臨，展現臺灣對密碼學實作於資通安全研究之重視，更提升國際產學合作能見度。</p>                               
-                                <div class="msg-signature">
-                                    <strong>
-                                    楊柏因 Bo-Yin Yang<br>
-                                    鐘楷閔 Kai-Min Chung
-                                    </strong><br>
-                                    General Co-Chairs
-                                </div>
+                <div class="message-box-container">
+                    <div class="message-split">
+                        <div class="msg-en">
+                            <p>Dear Mr. Allen Own <br>
+                            <span style="font-size: 0.85em; font-weight: bold;">Chairman, Association of Hackers in Taiwan</span><br><br>
+                            We cordially invite you to attend the Reception on March 9, together with the President and Board Members of the IACR.</p>
+                        </div>
+                        <div class="msg-zh">
+                            <p>誠摯邀請翁浩正 理事長<br><br>於 115 年 3 月 9 日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。國際密碼學會（IACR）理事長及多位理事將在晚宴中與各界交流。</p>
+                            <div style="margin-top: 20px;">
+                                <strong>楊柏因 Bo-Yin Yang<br>鐘楷閔 Kai-Min Chung</strong><br>General Co-Chairs
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-<div class="footer">
+
+        <div class="footer">
             <div class="sponsor-logos">
                 <img src="images/spon_aws.svg" alt="AWS" style="height: 20px;">
                 <img src="images/spon_apple.jpg" alt="APPLE" style="height: 25px;">
                 <img src="images/spon_AHIT.png" alt="AHIT" style="height: 18px;">
                 <img src="images/spon_asus.png" alt="ASUS" style="height: 28px;">
                 <img src="images/spon_BBG.png" alt="Bloomberg" style="height: 28px;">
-		<img src="images/spon_chelpis.png" alt="Chelpis" style="height: 45px;">
-                <img src="images/spon_cht.jpg" alt="CHT" style="height: 39px;">
-                <img src="images/spon_chtSecurity.png" alt="CHTSecurity" style="height: 33px;">
-                <img src="images/spon_crx.png" alt="CRX" style="height: 20px;">
-		<img src="images/spon_crypto_consulting.png" alt="Crypto Consulting" style="height: 35px;">
-		<img src="images/spon_cryspen.png" alt="Cryspen" style="height: 13px;">
-		<img src="images/spon_cycraft.png" alt="CyCraft" style="height: auto; width: 90px;">
-                <img src="images/spon_deloitte.jpg" alt="Deloitte" style="height: 58px;">                
-                <img src="images/spon_emxps.png" alt="eMxPs" style="height: 25px;">
                 <img src="images/spon_google.png" alt="Google" style="height: 20px;">
-		<img src="images/spon_hitcon.png" alt="HITCON" style="height: 48px;">
-		<img src="images/spon_imei.png" alt="IMEI" style="height: 45px;">
-		<img src="images/spon_interoplabs.png" alt="INTEROP" style="height: 35px;">
-                <img src="images/spon_jmem.jpg" alt="JMEM" style="height: 32px;">
                 <img src="images/spon_mtk.png" alt="MTK" style="height: 25px;">
-		<img src="images/spon_meta.png" alt="META" style="height: 30px;">
-                <img src="images/spon_mozilla.png" alt="Mozilla" style="height: 15px;">
-                <img src="images/spon_ncc.png" alt="NCC" style="height: 65px;">
-                <img src="images/spon_nics.png" alt="NICS" style="height: 42px;">
-                <img src="images/spon_nxp.png" alt="NXP" style="height: 28px;">
-                <img src="images/spon_PQShield.png" alt="PQShield" style="height: 14px;">
-		<img src="images/spon_sandbox.png" alt="Sandbox" style="height: 16px;">
-		<img src="images/spon_tqc.png" alt="TQC" style="height: 43px;">
-		<img src="images/spon_tii.png" alt="TII" style="height: 38px;">
-		<img src="images/spon_tinfoil.png" alt="Tinfoil" style="height: 15px;">
-                <img src="images/spon_ttc.png" alt="TTC" style="height: 38px;">
-		<img src="images/spon_verisign.png" alt="VERSIGN" style="height: 55px;">
-		<img src="images/spon_wisecure.png" alt="WiSECURE" style="height: 22px;">
-		<img src="images/spon_yubico.png" alt="Yubico" style="height: 15px;">
+                <img src="images/spon_verisign.png" alt="VERSIGN" style="height: 45px;">
                 <img src="images/spon_zama.png" alt="Zama" style="height: 35px;">
-		<img src="images/spon_zcash.png" alt="Zcash" style="height: 45px;">
-		<img src="images/spon_zeroRISC.png" alt="zeroRISC" style="height: 30px;">
-            </div>
+                </div>
         </div>
     </div>
-
-
-</body></html>
+</body>
+</html>
