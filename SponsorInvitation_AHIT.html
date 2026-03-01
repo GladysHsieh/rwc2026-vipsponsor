@@ -1,62 +1,241 @@
 <!DOCTYPE html>
 <html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RWC 2026 Invitation - Final</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <title>RWC 2026 Invitation (Final Layout)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background-color: #555; font-family: 'Noto Sans TC', sans-serif; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; overflow-y: auto; }
-        .container { width: 85%; max-width: 1000px; background-color: white; box-shadow: 0 0 25px rgba(0,0,0,0.6); display: flex; flex-direction: column; margin: 20px auto; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #555;
+            font-family: 'Noto Sans TC', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
 
-        /* --- 1. Header: 恢復原始 50px 高度設定 --- */
-        .header { background-color: white; padding: 15px 35px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 1px solid #eee; flex-shrink: 0; }
-        .header img { height: 50px; width: auto; object-fit: contain; }
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            margin: 15px auto;
+        }
+
+        /* --- 1. Header (完全還原原始尺寸) --- */
+        .header {
+            background-color: white;
+            padding: 15px 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+            flex-shrink: 0; /* 禁止被壓縮 */
+        }
+        
+        .header img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
         .header img.long { height: 40px; }
 
-        /* --- 2. Main Content: 轉為自動高度，防止掉字 --- */
-        .main-content { flex: 1; position: relative; background-image: url('images/bg.png'); background-size: cover; background-position: center center; padding: 25px 35px; color: white; background-color: #222; height: auto; min-height: 500px; }
-        .title-area { text-align: center; margin-bottom: 25px; }
-        h1 { font-family: 'Montserrat', sans-serif; font-size: 30px; color: #FFD700; text-shadow: 2px 2px 5px rgba(0,0,0,0.9); margin: 0; }
-        h2 { font-size: 24px; color: #ffffff; border-bottom: 3px solid #FFD700; padding-bottom: 3px; display: inline-block; margin-top: 5px; }
+        /* --- 2. Main Content (彈性高度防止掉字) --- */
+        .main-content {
+            flex: 1;
+            position: relative;
+            background-image: url('images/bg.png'); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            padding: 10px 35px;
+            color: white;
+            background-color: #222;
+        }
 
-        .salutation-area { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 15px; text-shadow: 1px 1px 3px rgba(0,0,0, 0.9); }
-        .content-row { display: flex; gap: 20px; align-items: flex-start; margin-left: 60px; }    
+        .title-area {
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
-        /* 左側資訊欄 */
-        .info-col { flex: 2.5; background: rgba(255,255,255, 0.1); backdrop-filter: blur(5px); padding: 15px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); text-align: left; height: auto; }
-        .info-item { margin-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 10px; }
-        .info-label { color: #FFD700; font-weight: 600; font-size: 13px; display: block; margin-bottom: 8px; }
-        /* 資訊欄文字：取消黑體，調高行距 */
-        .info-value { font-weight: 400; font-size: 14px; line-height: 1.6; display: block; }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: #FFD700;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+            line-height: 1.2;
+        }
 
-        /* 行事曆按鈕：融入排版不佔空間 */
-        .cal-btn { display: inline-block; margin-top: 8px; padding: 4px 10px; border: 1px solid #FFD700; color: #FFD700; text-decoration: none; font-size: 11px; border-radius: 3px; }
-        .cal-btn:hover { background: #FFD700; color: #000; }
+        h2 {
+            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 560;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+            display: inline-block;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 3px;
+        }
 
-        /* QR Code 區域 */
-        .qr-sig-row { display: flex; align-items: center; gap: 10px; margin-top: 15px; }
-        .qr-img { width: 90px; height: 90px; background-color: white; padding: 5px; border: 2px solid rgba(255,255,255,0.5); }
+        .salutation-area {
+            text-align: center;  
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px; 
+            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
+        }
 
-        /* 右側主文欄 */
-        .message-box-container { flex: 3.5; background: rgba(0,0,0, 0.5); padding: 25px; border-radius: 12px; width: 90%; margin: 0 auto; height: auto; overflow: visible; }
-        .message-split { display: flex; gap: 10px; }
-        .msg-en, .msg-zh { flex: 1; font-size: 14px; line-height: 1.7; text-shadow: 1px 1px 2px black; }
-        .msg-en { border-right: 1px solid rgba(255,255,255, 0.3); padding-right: 25px; }
-        .msg-signature { margin-top: 20px; }
+        .content-row {
+            display: flex;
+            gap: 20px; 
+            align-items: flex-start; 
+            margin-left: 60px; 
+        }    
 
-        /* --- 3. Footer: 保留原始尺寸，允許自動換行 --- */
-        .footer { background-color: white; padding: 15px 25px; border-top: 5px solid #800000; flex-shrink: 0; }
-        .sponsor-logos { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 18px; }
+        /* --- 左側：資訊欄 --- */
+        .info-col {
+            flex: 2.5; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(255,255,255, 0.1); 
+            backdrop-filter: blur(5px);
+            padding: 15px; 
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: left;
+            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
+            height: auto; 
+        }
+        .info-item {
+            margin-bottom: 10px;
+            font-size: 12px;
+            border-bottom: 1px dashed rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+        .info-item:last-child { border-bottom: none; }
         
+        .info-label {
+            color: #FFD700;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        /* 關鍵解決方案：調整行高確保萬豪廳換行不重疊 */
+        .info-value {
+            font-weight: 600;
+            line-height: 1.6; 
+            display: block;
+        }
+
+        /* 加入日曆按鈕 (精簡樣式) */
+        .cal-btn {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 4px 8px;
+            border: 1px solid #FFD700;
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 11px;
+            border-radius: 3px;
+        }
+
+        .qr-sig-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .qr-img {
+            width: 100px; 
+            height: 100px; 
+            background-color: white;
+            padding: 5px; 
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        /* --- 右側：主文欄 --- */
+        .message-box-container {
+            background: rgba(0,0,0, 0.5);
+            padding: 20px 25px; 
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: 90%;        
+            margin: 0 auto;    
+        }
+
+        .message-split {
+            display: flex;
+            gap: 10px;
+            height: auto;
+        }
+
+        .msg-en, .msg-zh {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.7;
+            text-shadow: 1px 1px 2px black;
+            text-align: left;
+        }
+        
+        .msg-en {
+            border-right: 1px solid rgba(255,255,255, 0.3);
+            padding-right: 30px;
+        }
+
+        .msg-signature {
+            margin-top: 15px;
+        }
+
+        /* --- 3. Footer (完全還原原始尺寸與 Logo 數量) --- */
+        .footer {
+            background-color: white;
+            padding: 15px 25px;
+            border-top: 5px solid #800000;
+            flex-shrink: 0; /* 禁止被壓縮 */
+        }
+        .sponsor-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px 18px; 
+        }
+
+        /* --- 列印優化 --- */
         @media print {
             @page { size: landscape; margin: 0; }
-            .cal-btn { display: none; }
             .container { width: 100%; box-shadow: none; margin: 0; }
-            .main-content { -webkit-print-color-adjust: exact; }
+            .main-content { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cal-btn { display: none; }
+        }
+
+        @media screen and (max-width: 900px) {
+            .content-row { flex-direction: column-reverse; gap: 30px; margin-left: 0; }
+            .message-split { flex-direction: column; }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
+        
         <div class="header">
             <img src="images/logo_iacr.png" alt="IACR">
             <img src="images/logo_as.png" alt="Academia Sinica" class="long">
@@ -69,18 +248,25 @@
         </div>
 
         <div class="main-content">
+            
             <div class="title-area">
                 <h1>Real World Crypto Symposium 2026</h1>
                 <h2>Reception｜歡迎晚宴</h2>
             </div>
-            <div class="salutation-area">台灣駭客協會 翁浩正 理事長 鈞啟</div>
+
+            <div class="salutation-area">
+                台灣駭客協會 翁浩正 理事長 鈞啟
+            </div>
+
             <div class="content-row">
+                
                 <div class="info-col">
                     <div class="info-item">
                         <span class="info-label">📅 DATE / 日期</span>
                         <span class="info-value">March 9, 2026 (Mon)<br>18:45 - 20:45</span>
-                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=RWC+2026+Reception&dates=20260309T104500Z/20260309T124500Z&details=Real+World+Crypto+Symposium+2026+Reception&location=Taipei+Marriott+Hotel+5F+Marriott+Hall" target="_blank" class="cal-btn">📅 加入 Google 日曆</a>
+                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=RWC+2026+Reception&dates=20260309T104500Z/20260309T124500Z&details=Real+World+Crypto+Symposium+2026+Reception&location=Taipei+Marriott+Hotel+5F+Marriott+Hall" target="_blank" class="cal-btn">📅 Add to Calendar</a>
                     </div>
+                    
                     <div class="info-item">
                         <span class="info-label">📍 VENUE / 地點</span>
                         <span class="info-value">Taipei Marriott Hotel<br>5F Marriott Hall<br>台北萬豪酒店 5樓<br>萬豪廳</span>
@@ -89,21 +275,24 @@
                         <img src="images/qrcode.png" alt="RSVP QR" class="qr-img">
                     </div>
                 </div>
+
                 <div class="message-box-container">
                     <div class="message-split">
                         <div class="msg-en">
                             <p>Dear Mr. Allen Own <br>
-                            <span style="font-size: 0.85em;">Chairman, Association of Hackers in Taiwan</span><br><br>
+                            <span style="font-size: 0.8em;"> Chairman, Association of Hackers in Taiwan</span><br><br>
                             We cordially invite you to attend the Reception on March 9, together with the President and Board Members of the IACR.</p>
                         </div>
+                        
                         <div class="msg-zh">
-                            <p>誠摯邀請翁浩正 理事長<br><br>於 115 年 3 月 9 日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。</p>
+                            <p>誠摯邀請翁浩正 理事長<br><br>於 115 年 3 月 9 日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。</p>                               
                             <div class="msg-signature">
                                 <strong>楊柏因 Bo-Yin Yang<br>鐘楷閔 Kai-Min Chung</strong><br>General Co-Chairs
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -149,5 +338,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+
+</body></html>
