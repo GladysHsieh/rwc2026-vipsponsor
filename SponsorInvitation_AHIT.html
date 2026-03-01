@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RWC 2026 Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <title>RWC 2026 Invitation - Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background-color: #555; font-family: 'Noto Sans TC', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .container { width: 85%; max-width: 1000px; background-color: white; box-shadow: 0 0 25px rgba(0,0,0,0.6); display: flex; flex-direction: column; margin: 15px auto; }
+        body { margin: 0; padding: 0; background-color: #555; font-family: 'Noto Sans TC', sans-serif; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; overflow-y: auto; }
+        .container { width: 85%; max-width: 1000px; background-color: white; box-shadow: 0 0 25px rgba(0,0,0,0.6); display: flex; flex-direction: column; margin: 20px auto; }
 
-        /* --- 1. Header: 鎖定高度，不被擠壓 --- */
+        /* --- 1. Header: 恢復原始 50px 高度設定 --- */
         .header { background-color: white; padding: 15px 35px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 1px solid #eee; flex-shrink: 0; }
-        .header img { height: 50px !important; width: auto; object-fit: contain; }
+        .header img { height: 50px; width: auto; object-fit: contain; }
+        .header img.long { height: 40px; }
 
-        /* --- 2. Main Content --- */
-        .main-content { flex: 1; position: relative; background-image: url('images/bg.png'); background-size: cover; background-position: center center; padding: 15px 35px; color: white; background-color: #222; }
-        .title-area { text-align: center; margin-bottom: 20px; }
-        h1 { font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFD700; text-shadow: 2px 2px 5px rgba(0,0,0,0.9); margin: 0; }
-        h2 { font-size: 22px; color: #ffffff; border-bottom: 3px solid #FFD700; padding-bottom: 3px; display: inline-block; margin-top: 5px; }
+        /* --- 2. Main Content: 轉為自動高度，防止掉字 --- */
+        .main-content { flex: 1; position: relative; background-image: url('images/bg.png'); background-size: cover; background-position: center center; padding: 25px 35px; color: white; background-color: #222; height: auto; min-height: 500px; }
+        .title-area { text-align: center; margin-bottom: 25px; }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 30px; color: #FFD700; text-shadow: 2px 2px 5px rgba(0,0,0,0.9); margin: 0; }
+        h2 { font-size: 24px; color: #ffffff; border-bottom: 3px solid #FFD700; padding-bottom: 3px; display: inline-block; margin-top: 5px; }
 
-        .salutation-area { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 10px; text-shadow: 1px 1px 3px rgba(0,0,0, 0.9); }
-        .content-row { display: flex; gap: 15px; align-items: flex-start; margin-left: 40px; }    
+        .salutation-area { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 15px; text-shadow: 1px 1px 3px rgba(0,0,0, 0.9); }
+        .content-row { display: flex; gap: 20px; align-items: flex-start; margin-left: 60px; }    
 
-        /* 左側資訊欄：調整字體與空間 */
-        .info-col { flex: 1; background: rgba(255,255,255, 0.1); backdrop-filter: blur(5px); padding: 15px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); text-align: left; }
-        .info-item { margin-bottom: 12px; border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 8px; }
-        .info-label { color: #FFD700; font-weight: 600; font-size: 11px; display: block; margin-bottom: 3px; }
-        
-        /* 日期地點字體微調：取消黑體、縮小字體 */
-        .info-value { font-weight: 400; font-size: 13px; line-height: 1.5; display: block; }
+        /* 左側資訊欄 */
+        .info-col { flex: 2.5; background: rgba(255,255,255, 0.1); backdrop-filter: blur(5px); padding: 15px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); text-align: left; height: auto; }
+        .info-item { margin-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.3); padding-bottom: 10px; }
+        .info-label { color: #FFD700; font-weight: 600; font-size: 13px; display: block; margin-bottom: 8px; }
+        /* 資訊欄文字：取消黑體，調高行距 */
+        .info-value { font-weight: 400; font-size: 14px; line-height: 1.6; display: block; }
 
-        /* 行事曆按鈕：更小巧的設計 */
-        .cal-btn { display: inline-block; margin-top: 5px; padding: 4px 8px; border: 1px solid #FFD700; color: #FFD700; text-decoration: none; font-size: 11px; border-radius: 3px; }
+        /* 行事曆按鈕：融入排版不佔空間 */
+        .cal-btn { display: inline-block; margin-top: 8px; padding: 4px 10px; border: 1px solid #FFD700; color: #FFD700; text-decoration: none; font-size: 11px; border-radius: 3px; }
         .cal-btn:hover { background: #FFD700; color: #000; }
 
-        .qr-img { width: 85px; height: 85px; background-color: white; padding: 3px; margin-top: 5px; }
+        /* QR Code 區域 */
+        .qr-sig-row { display: flex; align-items: center; gap: 10px; margin-top: 15px; }
+        .qr-img { width: 90px; height: 90px; background-color: white; padding: 5px; border: 2px solid rgba(255,255,255,0.5); }
 
         /* 右側主文欄 */
-        .message-box-container { flex: 2.2; background: rgba(0,0,0, 0.5); padding: 20px; border-radius: 12px; }
-        .message-split { display: flex; gap: 15px; }
-        .msg-en, .msg-zh { flex: 1; font-size: 13.5px; line-height: 1.6; text-shadow: 1px 1px 2px black; }
-        .msg-en { border-right: 1px solid rgba(255,255,255, 0.3); padding-right: 15px; }
+        .message-box-container { flex: 3.5; background: rgba(0,0,0, 0.5); padding: 25px; border-radius: 12px; width: 90%; margin: 0 auto; height: auto; overflow: visible; }
+        .message-split { display: flex; gap: 10px; }
+        .msg-en, .msg-zh { flex: 1; font-size: 14px; line-height: 1.7; text-shadow: 1px 1px 2px black; }
+        .msg-en { border-right: 1px solid rgba(255,255,255, 0.3); padding-right: 25px; }
+        .msg-signature { margin-top: 20px; }
 
-        /* --- 3. Footer: 強制不被擠壓 --- */
+        /* --- 3. Footer: 保留原始尺寸，允許自動換行 --- */
         .footer { background-color: white; padding: 15px 25px; border-top: 5px solid #800000; flex-shrink: 0; }
-        .sponsor-logos { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 15px; }
+        .sponsor-logos { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 18px; }
         
         @media print {
             @page { size: landscape; margin: 0; }
             .cal-btn { display: none; }
-            .container { width: 95%; box-shadow: none; }
+            .container { width: 100%; box-shadow: none; margin: 0; }
             .main-content { -webkit-print-color-adjust: exact; }
         }
     </style>
@@ -56,13 +59,13 @@
     <div class="container">
         <div class="header">
             <img src="images/logo_iacr.png" alt="IACR">
-            <img src="images/logo_as.png" alt="Academia Sinica">
+            <img src="images/logo_as.png" alt="Academia Sinica" class="long">
             <img src="images/logo_iis.jpg" alt="IIS">
-            <img src="images/logo_citi.jpg" alt="CITI">
+            <img src="images/logo_citi.jpg" alt="CITI" class="long">
             <div style="width: 1px; height: 30px; background: #ddd; margin: 0 10px;"></div>
             <img src="images/logo_ccisa.jpg" alt="CCISA">
-            <img src="images/logo_nstc.png" alt="NSTC">
-            <img src="images/logo_mice.png" alt="MICE">
+            <img src="images/logo_nstc.png" alt="NSTC" class="long">
+            <img src="images/logo_mice.png" alt="MICE" class="long">
         </div>
 
         <div class="main-content">
@@ -76,13 +79,15 @@
                     <div class="info-item">
                         <span class="info-label">📅 DATE / 日期</span>
                         <span class="info-value">March 9, 2026 (Mon)<br>18:45 - 20:45</span>
-                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=RWC+2026+Reception&dates=20260309T104500Z/20260309T124500Z&details=Real+World+Crypto+Symposium+2026+Reception&location=Taipei+Marriott+Hotel+5F+Marriott+Hall" target="_blank" class="cal-btn">📅 Add to Calendar</a>
+                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=RWC+2026+Reception&dates=20260309T104500Z/20260309T124500Z&details=Real+World+Crypto+Symposium+2026+Reception&location=Taipei+Marriott+Hotel+5F+Marriott+Hall" target="_blank" class="cal-btn">📅 加入 Google 日曆</a>
                     </div>
                     <div class="info-item">
                         <span class="info-label">📍 VENUE / 地點</span>
-                        <span class="info-value">Taipei Marriott Hotel<br>5F Marriott Hall<br>台北萬豪酒店5樓<br>萬豪廳</span>
+                        <span class="info-value">Taipei Marriott Hotel<br>5F Marriott Hall<br>台北萬豪酒店 5樓<br>萬豪廳</span>
                     </div>
-                    <img src="images/qrcode.png" alt="RSVP QR" class="qr-img">
+                    <div class="qr-sig-row">
+                        <img src="images/qrcode.png" alt="RSVP QR" class="qr-img">
+                    </div>
                 </div>
                 <div class="message-box-container">
                     <div class="message-split">
@@ -93,7 +98,7 @@
                         </div>
                         <div class="msg-zh">
                             <p>誠摯邀請翁浩正 理事長<br><br>於 115 年 3 月 9 日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。</p>
-                            <div style="margin-top: 15px;">
+                            <div class="msg-signature">
                                 <strong>楊柏因 Bo-Yin Yang<br>鐘楷閔 Kai-Min Chung</strong><br>General Co-Chairs
                             </div>
                         </div>
@@ -104,11 +109,43 @@
 
         <div class="footer">
             <div class="sponsor-logos">
-                <img src="images/spon_aws.svg" alt="AWS" style="height: 18px;">
-                <img src="images/spon_apple.jpg" alt="APPLE" style="height: 22px;">
-                <img src="images/spon_AHIT.png" alt="AHIT" style="height: 15px;">
-                <img src="images/spon_asus.png" alt="ASUS" style="height: 25px;">
-                <img src="images/spon_google.png" alt="Google" style="height: 18px;">
+                <img src="images/spon_aws.svg" alt="AWS" style="height: 20px;">
+                <img src="images/spon_apple.jpg" alt="APPLE" style="height: 25px;">
+                <img src="images/spon_AHIT.png" alt="AHIT" style="height: 18px;">
+                <img src="images/spon_asus.png" alt="ASUS" style="height: 28px;">
+                <img src="images/spon_BBG.png" alt="Bloomberg" style="height: 28px;">
+                <img src="images/spon_chelpis.png" alt="Chelpis" style="height: 45px;">
+                <img src="images/spon_cht.jpg" alt="CHT" style="height: 39px;">
+                <img src="images/spon_chtSecurity.png" alt="CHTSecurity" style="height: 33px;">
+                <img src="images/spon_crx.png" alt="CRX" style="height: 20px;">
+                <img src="images/spon_crypto_consulting.png" alt="Crypto" style="height: 35px;">
+                <img src="images/spon_cryspen.png" alt="Cryspen" style="height: 13px;">
+                <img src="images/spon_cycraft.png" alt="CyCraft" style="width: 90px;">
+                <img src="images/spon_deloitte.jpg" alt="Deloitte" style="height: 58px;">
+                <img src="images/spon_emxps.png" alt="eMxPs" style="height: 25px;">
+                <img src="images/spon_google.png" alt="Google" style="height: 20px;">
+                <img src="images/spon_hitcon.png" alt="HITCON" style="height: 48px;">
+                <img src="images/spon_imei.png" alt="IMEI" style="height: 45px;">
+                <img src="images/spon_interoplabs.png" alt="INTEROP" style="height: 35px;">
+                <img src="images/spon_jmem.jpg" alt="JMEM" style="height: 32px;">
+                <img src="images/spon_mtk.png" alt="MTK" style="height: 25px;">
+                <img src="images/spon_meta.png" alt="META" style="height: 30px;">
+                <img src="images/spon_mozilla.png" alt="Mozilla" style="height: 15px;">
+                <img src="images/spon_ncc.png" alt="NCC" style="height: 65px;">
+                <img src="images/spon_nics.png" alt="NICS" style="height: 42px;">
+                <img src="images/spon_nxp.png" alt="NXP" style="height: 28px;">
+                <img src="images/spon_PQShield.png" alt="PQ" style="height: 14px;">
+                <img src="images/spon_sandbox.png" alt="Sandbox" style="height: 16px;">
+                <img src="images/spon_tqc.png" alt="TQC" style="height: 43px;">
+                <img src="images/spon_tii.png" alt="TII" style="height: 38px;">
+                <img src="images/spon_tinfoil.png" alt="Tinfoil" style="height: 15px;">
+                <img src="images/spon_ttc.png" alt="TTC" style="height: 38px;">
+                <img src="images/spon_verisign.png" alt="VERSIGN" style="height: 55px;">
+                <img src="images/spon_wisecure.png" alt="WiSECURE" style="height: 22px;">
+                <img src="images/spon_yubico.png" alt="Yubico" style="height: 15px;">
+                <img src="images/spon_zama.png" alt="Zama" style="height: 35px;">
+                <img src="images/spon_zcash.png" alt="Zcash" style="height: 45px;">
+                <img src="images/spon_zeroRISC.png" alt="zero" style="height: 30px;">
             </div>
         </div>
     </div>
