@@ -123,8 +123,7 @@
             border-bottom: 1px dashed rgba(255,255,255,0.3);
             padding-bottom: 10px;
         }
-        .info-item:last-child { border-bottom: none; }
-        
+                
         .info-label {
             color: #FFD700;
             font-weight: 600;
@@ -137,9 +136,18 @@
         }
         
         .info-value {
-            font-weight: 600;
-            line-height: 1.15;
-        }
+    		font-weight: 600;
+    		line-height: 1.5;        /* 加大行距，換行後字才不會疊在一起 */
+    		display: block;         /* 確保它是塊狀顯示 */
+    		white-space: normal;    /* 強制允許正常換行 */
+    		word-break: break-all;  /* 避免英文單字過長衝出邊框 */
+		}
+
+/* 針對資訊欄位的項目增加一點間距，避免換行後擠在一起 */
+		.info-item {
+    		margin-bottom: 15px;    /* 稍微加大項目的下方間距 */
+    		height: auto;           /* 確保高度隨內容增長 */
+		}
 
         .qr-sig-row {
             display: flex;
