@@ -1,10 +1,9 @@
-F<!DOCTYPE html>
-<!-- saved from url=(0074)file:///C:/Users/sinica/Desktop/RWC2026_Invite/SponsorInvitation_NICS.html -->
+<!DOCTYPE html>
 <html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWC 2026 Invitation (Final Layout)</title>
-    <link href="css2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -27,7 +26,7 @@ F<!DOCTYPE html>
             margin: 15px auto;
         }
 
-        /* --- 1. Header --- */
+        /* --- 1. Header (完全還原原始尺寸) --- */
         .header {
             background-color: white;
             padding: 15px 35px;
@@ -37,6 +36,7 @@ F<!DOCTYPE html>
             flex-wrap: wrap;
             gap: 15px;
             border-bottom: 1px solid #eee;
+            flex-shrink: 0; /* 禁止被壓縮 */
         }
         
         .header img {
@@ -46,11 +46,11 @@ F<!DOCTYPE html>
         }
         .header img.long { height: 40px; }
 
-        /* --- 2. Main Content --- */
+        /* --- 2. Main Content (彈性高度防止掉字) --- */
         .main-content {
             flex: 1;
             position: relative;
-            background-image: url('bg.png'); 
+            background-image: url('images/bg.png'); 
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -86,49 +86,36 @@ F<!DOCTYPE html>
             padding-bottom: 3px;
         }
 
-        /* 致詞區塊 */
         .salutation-area {
-            text-align: center;  /* <--- 關鍵修改：由 left 改為 center */
+            text-align: center;  
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 5px; /* 稍微增加一點與下方的距離 */
+            margin-bottom: 5px; 
             text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
-            /* padding-left: 5px; <--- 建議刪除這行，避免置中時有些微偏差 */
         }
 
-	/* --- 核心佈局 --- */
         .content-row {
             display: flex;
             gap: 20px; 
             align-items: flex-start; 
-    
-            /* 👇 加上這行，將整個區塊往右推 👇 */
-            margin-left: 60px; /* 數字越大，整體往右移越多，您可以改成 40px 或 60px 試試看 */
-}    align-items: flex-start; 
-}
-/* --- 左側：資訊欄 (Information Column) --- */
-.info-col {
-    /* 修改寬度比例：讓左側稍微寬一點，視覺較平衡 */
-    flex: 2.5; 
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    background: rgba(255,255,255, 0.1); 
-    backdrop-filter: blur(5px);
-    
-    /* 修改內距：稍微減少，讓區塊更緊湊 */
-    padding: 15px; 
-    
-    border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.2);
-    text-align: left;
-    text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
-    
-    /* 確保高度自動 */
-    height: auto; 
-}
+            margin-left: 10px; 
+        }    
+
+        /* --- 左側：資訊欄 --- */
+        .info-col {
+            flex: 0.9; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(255,255,255, 0.1); 
+            backdrop-filter: blur(5px);
+            padding: 15px; 
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: left;
+            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
+            height: auto; 
+        }
         .info-item {
             margin-bottom: 10px;
             font-size: 12px;
@@ -148,9 +135,23 @@ F<!DOCTYPE html>
             text-transform: uppercase;
         }
         
+        /* 關鍵解決方案：調整行高確保萬豪廳換行不重疊 */
         .info-value {
             font-weight: 600;
-            line-height: 1.15;
+            line-height: 1.6; 
+            display: block;
+        }
+
+        /* 加入日曆按鈕 (精簡樣式) */
+        .cal-btn {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 4px 8px;
+            border: 1px solid #FFD700;
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 11px;
+            border-radius: 3px;
         }
 
         .qr-sig-row {
@@ -160,60 +161,31 @@ F<!DOCTYPE html>
             margin-top: 5px;
         }
         .qr-img {
-            /* 1. 加大尺寸：從 80px 加大到 100px 或 120px，更好掃 */
             width: 100px; 
             height: 100px; 
-            
-            /* 2. 移除圓角：QR Code 需要銳利的角落，圓角會破壞定位點 */
-            border-radius: 0; 
-            
-            /* 3. 防止變形：確保圖片不會被拉伸 */
-            object-fit: contain;
-            
-            /* 4. 強制白底與留白 (關鍵)：
-               即便圖片是透明的，這行能確保 QR Code 底部是全白的。
-               padding 提供了必要的「靜區」(Quiet Zone) */
             background-color: white;
             padding: 5px; 
-            
-            /* 5. 邊框 (可選，但在白底外加個邊框視覺較好) */
             border: 2px solid rgba(255,255,255,0.5);
         }
-        .signature-block {
-            font-size: 12px;
-            color: #eee;
-            line-height: 1.15;
-        }
-        .signature-block strong { color: white; font-size: 14px; }
 
-/* --- 右側：主文欄 (Message Column) --- */
+        /* --- 右側：主文欄 --- */
         .message-box-container {
+            /* 確保右側比例較大，例如設為 3 或更高，以填滿剩餘空間 */
+            flex: 3.5;
             background: rgba(0,0,0, 0.5);
             padding: 20px 25px; 
             border-radius: 12px;
             display: flex;
             flex-direction: column;
             height: auto;
-    
-    /* 👇 加上下面這兩行來控制寬度 👇 */
-    width: 90%;        /* 讓它只佔據可用空間的 90% (數值可自行調整，如 80%) */
-    margin: 0 auto;    /* 讓這個縮小後的框框保持「置中」對齊 */
-}
+            width: auto;        
+            margin: auto;    
+        }
 
-/* 黑色半透明背景容器 */
-.message-box-container {
-    background: rgba(0,0,0, 0.5);
-    padding: 20px 25px; 
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-}
-        /* 內部：左右分欄 (英文 | 中文) */
         .message-split {
             display: flex;
             gap: 10px;
-            height: 80%;
+            height: auto;
         }
 
         .msg-en, .msg-zh {
@@ -222,8 +194,6 @@ F<!DOCTYPE html>
             line-height: 1.7;
             text-shadow: 1px 1px 2px black;
             text-align: left;
-            display: flex;
-            flex-direction: column;
         }
         
         .msg-en {
@@ -231,44 +201,36 @@ F<!DOCTYPE html>
             padding-right: 30px;
         }
 
-        .msg-p { margin-top: 0; margin-bottom: 10px; }
-        
-        /* 簽名檔樣式 */
         .msg-signature {
-            margin-top: auto; /* 推到最底部 */
-            padding-top: 15px;
+            margin-top: 15px;
         }
 
-        /* --- 3. Footer (Sponsor Logos) --- */
+        /* --- 3. Footer (完全還原原始尺寸與 Logo 數量) --- */
         .footer {
             background-color: white;
             padding: 15px 25px;
             border-top: 5px solid #800000;
+            flex-shrink: 0; /* 禁止被壓縮 */
         }
         .sponsor-logos {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-    
-    /* 這裡改成兩個數字：上下 5px，左右維持 15px */
-    gap: 0px 18px; 
-}
-
-        /* --- RWD 手機版調整 --- */
-        @media screen and (max-width: 900px) {
-            .content-row { flex-direction: column-reverse; gap: 30px; }
-            .message-split { flex-direction: column; gap: 20px; }
-            .msg-en { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 20px; }
-            .header img { height: 35px !important; } /* 手機版強制縮小 */
-            .sponsor-logos { justify-content: center; }
-            .sponsor-logos img { height: 35px !important; width: auto !important; }
+            gap: 10px 18px; 
         }
-        
+
+        /* --- 列印優化 --- */
         @media print {
-             @page { size: landscape; margin: 0; }
-             .container { width: 90%; box-shadow: none; margin: 0; }
-             .main-content { -webkit-print-color-adjust: exact; }
+            @page { size: landscape; margin: 0; }
+            .container { width: 100%; box-shadow: none; margin: 0; }
+            .main-content { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cal-btn { display: none; }
+        }
+
+        @media screen and (max-width: 900px) {
+            .content-row { flex-direction: column-reverse; gap: 30px; margin-left: 0; }
+            .message-split { flex-direction: column; }
         }
     </style>
 </head>
@@ -277,14 +239,14 @@ F<!DOCTYPE html>
     <div class="container">
         
         <div class="header">
-            <img src="logo_iacr.png" style="height: 50px;" alt="IACR">
-            <img src="logo_as.png" style="height: 50px;" alt="Academia Sinica" class="long">
-            <img src="logo_iis.jpg" style="height: 45px;" alt="IIS">
-            <img src="logo_citi.jpg" style="height: 45px;" alt="CITI" class="long">
+            <img src="images/logo_iacr.png" style="height: 50px;" alt="IACR">
+            <img src="images/logo_as.png" style="height: 50px;" alt="Academia Sinica" class="long">
+            <img src="images/logo_iis.jpg" style="height: 45px;" alt="IIS">
+            <img src="images/logo_citi.jpg" style="height: 45px;" alt="CITI" class="long">
             <div style="width: 1px; height: 30px; background: #ddd; margin: 0 10px;"></div>
-            <img src="logo_ccisa.jpg" style="height: 55px;" alt="CCISA">
-            <img src="logo_nstc.png" style="height: 25px;" alt="NSTC" class="long">
-            <img src="logo_mice.png" style="height: 32px;" alt="MICE" class="long">
+            <img src="images/logo_ccisa.jpg" style="height: 55px;" alt="CCISA">
+            <img src="images/logo_nstc.png" style="height: 25px;" alt="NSTC" class="long">
+            <img src="images/logo_mice.png" style="height: 32px;" alt="MICE" class="long">
         </div>
 
         <div class="main-content">
@@ -295,7 +257,7 @@ F<!DOCTYPE html>
             </div>
 
             <div class="salutation-area">
-                					 鈞啟
+                ASUS 華碩電腦 張宏昌 Senior Director 鈞啟
             </div>
 
             <div class="content-row">
@@ -304,40 +266,32 @@ F<!DOCTYPE html>
                     <div class="info-item">
                         <span class="info-label">📅 DATE / 日期</span>
                         <span class="info-value">March 9, 2026 (Mon)<br>18:45 - 20:45</span>
+                        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=RWC+2026+Reception&dates=20260309T104500Z/20260309T124500Z&details=Real+World+Crypto+Symposium+2026+Reception&location=Taipei+Marriott+Hotel+5F+Marriott+Hall" target="_blank" class="cal-btn">📅 Add to Calendar</a>
                     </div>
                     
                     <div class="info-item">
                         <span class="info-label">📍 VENUE / 地點</span>
-                        <span class="info-value">Taipei Marriott Hotel<br>5F Marriott Hall<br>台北萬豪酒店5樓</br> 萬豪廳</span>
+                        <span class="info-value">Taipei Marriott Hotel<br>5F Marriott Hall<br>台北萬豪酒店 5樓<br>萬豪廳</span>
                     </div>
                     <div class="qr-sig-row">
-                        <img src="qrcode.png" alt="RSVP QR" class="qr-img">
-                        <div class="signature-block">
-                        </div>
+                        <img src="images/qrcode.png" alt="RSVP QR" class="qr-img">
                     </div>
                 </div>
 
-                <div class="message-col">
-                    <div class="message-box-container">
-                        <div class="message-split">
-                            <div class="msg-en">
-                                <p class="msg-p">				 <br>
-<span style="font-size: 0.8em;">					</span>
-<br>
-<br>
-<span style="font-size: 0.9em;">We cordially invite you to attend the Reception on March 9, together with the President and Board Members of the IACR.<br><br>
-Your presence would highlight our nation’s strong commitment to cryptography and information security research and further enhance Taiwan’s visibility within the international academic community.</span></p>
-                            </div>
-                            
-                            <div class="msg-zh">
-                                <p class="msg-p">誠摯邀請			<br><br>於中華民國115年3月9日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。<br>國際密碼學會（IACR）理事長及多位理事將在晚宴中與各界菁英交流。您的蒞臨，將為晚宴增添殊榮，亦彰顯我國對資安與密碼科技發展之高度重視。</p>                               
-                                <div class="msg-signature">
-                                    <strong>
-                                    楊柏因 Bo-Yin Yang<br>
-                                    鐘楷閔 Kai-Min Chung
-                                    </strong><br>
-                                    General Co-Chairs
-                                </div>
+                <div class="message-box-container">
+                    <div class="message-split">
+                        <div class="msg-en">
+                            <p>Dear Mr. Alex Chang <br>
+                            <span style="font-size: 0.8em;"> Senior Director, ASUS</span><br><br>
+                            We cordially invite you to attend the Reception on March 9, together with the President and Board Members of the IACR.<br> 
+                                Your presence would highlight our nation’s strong commitment to cryptography and information security research and further enhance Taiwan’s visibility within the international academic community.</p>
+                        </div>
+                        
+                        <div class="msg-zh">
+                            <p>誠摯邀請 張宏昌 Senior Director<br><br>於 115 年 3 月 9 日晚間蒞臨「2026年真實世界密碼學國際會議」歡迎晚宴。國際密碼學會（IACR）理事長及多位理事將在晚宴中與各界菁英交流。
+                                <br>您的蒞臨，展現臺灣對密碼學實作於資通安全研究之重視，更提升國際產學合作能見度。</p>                               
+                            <div class="msg-signature">
+                                <strong>楊柏因 Bo-Yin Yang<br>鐘楷閔 Kai-Min Chung</strong><br>General Co-Chairs
                             </div>
                         </div>
                     </div>
@@ -345,48 +299,48 @@ Your presence would highlight our nation’s strong commitment to cryptography a
 
             </div>
         </div>
-<div class="footer">
+
+        <div class="footer">
             <div class="sponsor-logos">
-                <img src="spon_aws.svg" alt="AWS" style="height: 20px;">
-                <img src="spon_apple.jpg" alt="APPLE" style="height: 25px;">
-                <img src="spon_AHIT.png" alt="AHIT" style="height: 18px;">
-                <img src="spon_asus.png" alt="ASUS" style="height: 28px;">
-                <img src="spon_BBG.png" alt="Bloomberg" style="height: 28px;">
-		<img src="spon_chelpis.png" alt="Chelpis" style="height: 45px;">
-                <img src="spon_cht.jpg" alt="CHT" style="height: 39px;">
-                <img src="spon_chtSecurity.png" alt="CHTSecurity" style="height: 33px;">
-                <img src="spon_crx.png" alt="CRX" style="height: 20px;">
-		<img src="spon_crypto_consulting.png" alt="Crypto Consulting" style="height: 35px;">
-		<img src="spon_cryspen.png" alt="Cryspen" style="height: 13px;">
-		<img src="spon_cycraft.png" alt="CyCraft" style="height: auto; width: 90px;">
-                <img src="spon_deloitte.jpg" alt="Deloitte" style="height: 58px;">                
-                <img src="spon_emxps.png" alt="eMxPs" style="height: 25px;">
-                <img src="spon_google.png" alt="Google" style="height: 20px;">
-		<img src="spon_hitcon.png" alt="HITCON" style="height: 48px;">
-		<img src="spon_imei.png" alt="IMEI" style="height: 45px;">
-		<img src="spon_interoplabs.png" alt="INTEROP" style="height: 35px;">
-                <img src="spon_jmem.jpg" alt="JMEM" style="height: 32px;">
-                <img src="spon_mtk.png" alt="MTK" style="height: 25px;">
-		<img src="spon_meta.png" alt="META" style="height: 30px;">
-                <img src="spon_mozilla.png" alt="Mozilla" style="height: 15px;">
-                <img src="spon_ncc.png" alt="NCC" style="height: 65px;">
-                <img src="spon_nics.png" alt="NICS" style="height: 42px;">
-                <img src="spon_nxp.png" alt="NXP" style="height: 28px;">
-                <img src="spon_PQShield.png" alt="PQShield" style="height: 14px;">
-		<img src="spon_sandbox.png" alt="Sandbox" style="height: 16px;">
-		<img src="spon_tqc.png" alt="TQC" style="height: 43px;">
-		<img src="spon_tii.png" alt="TII" style="height: 38px;">
-		<img src="spon_tinfoil.png" alt="Tinfoil" style="height: 15px;">
-                <img src="spon_ttc.png" alt="TTC" style="height: 38px;">
-		<img src="spon_verisign.png" alt="VERSIGN" style="height: 55px;">
-		<img src="spon_wisecure.png" alt="WiSECURE" style="height: 22px;">
-		<img src="spon_yubico.png" alt="Yubico" style="height: 15px;">
-                <img src="spon_zama.png" alt="Zama" style="height: 35px;">
-		<img src="spon_zcash.png" alt="Zcash" style="height: 45px;">
-		<img src="spon_zeroRISC.png" alt="zeroRISC" style="height: 30px;">
+                <img src="images/spon_aws.svg" alt="AWS" style="height: 20px;">
+                <img src="images/spon_apple.jpg" alt="APPLE" style="height: 25px;">
+                <img src="images/spon_AHIT.png" alt="AHIT" style="height: 18px;">
+                <img src="images/spon_asus.png" alt="ASUS" style="height: 28px;">
+                <img src="images/spon_BBG.png" alt="Bloomberg" style="height: 28px;">
+                <img src="images/spon_chelpis.png" alt="Chelpis" style="height: 45px;">
+                <img src="images/spon_cht.jpg" alt="CHT" style="height: 39px;">
+                <img src="images/spon_chtSecurity.png" alt="CHTSecurity" style="height: 33px;">
+                <img src="images/spon_crx.png" alt="CRX" style="height: 20px;">
+                <img src="images/spon_crypto_consulting.png" alt="Crypto" style="height: 35px;">
+                <img src="images/spon_cryspen.png" alt="Cryspen" style="height: 13px;">
+                <img src="images/spon_cycraft.png" alt="CyCraft" style="width: 90px;">
+                <img src="images/spon_deloitte.jpg" alt="Deloitte" style="height: 58px;">
+                <img src="images/spon_emxps.png" alt="eMxPs" style="height: 25px;">
+                <img src="images/spon_google.png" alt="Google" style="height: 20px;">
+                <img src="images/spon_hitcon.png" alt="HITCON" style="height: 48px;">
+                <img src="images/spon_imei.png" alt="IMEI" style="height: 45px;">
+                <img src="images/spon_interoplabs.png" alt="INTEROP" style="height: 35px;">
+                <img src="images/spon_jmem.jpg" alt="JMEM" style="height: 32px;">
+                <img src="images/spon_mtk.png" alt="MTK" style="height: 25px;">
+                <img src="images/spon_meta.png" alt="META" style="height: 30px;">
+                <img src="images/spon_mozilla.png" alt="Mozilla" style="height: 15px;">
+                <img src="images/spon_ncc.png" alt="NCC" style="height: 65px;">
+                <img src="images/spon_nics.png" alt="NICS" style="height: 42px;">
+                <img src="images/spon_nxp.png" alt="NXP" style="height: 28px;">
+                <img src="images/spon_PQShield.png" alt="PQ" style="height: 14px;">
+                <img src="images/spon_sandbox.png" alt="Sandbox" style="height: 16px;">
+                <img src="images/spon_tqc.png" alt="TQC" style="height: 40px;">
+                <img src="images/spon_tii.png" alt="TII" style="height: 35px;">
+                <img src="images/spon_tinfoil.png" alt="Tinfoil" style="height: 15px;">
+                <img src="images/spon_ttc.png" alt="TTC" style="height: 33px;">
+                <img src="images/spon_verisign.png" alt="VERSIGN" style="height: 55px;">
+                <img src="images/spon_wisecure.png" alt="WiSECURE" style="height: 21px;">
+                <img src="images/spon_yubico.png" alt="Yubico" style="height: 13px;">
+                <img src="images/spon_zama.png" alt="Zama" style="height: 35px;">
+                <img src="images/spon_zcash.png" alt="Zcash" style="height: 45px;">
+                <img src="images/spon_zeroRISC.png" alt="zero" style="height: 22px;">
             </div>
         </div>
     </div>
-
 
 </body></html>
