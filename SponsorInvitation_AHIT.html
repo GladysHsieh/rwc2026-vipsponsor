@@ -165,21 +165,23 @@
 
         /* --- 右側：主文欄 --- */
         .message-box-container {
-            background: rgba(0,0,0, 0.5);
-            padding: 20px 25px; 
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            width: 90%;        
-            margin: 0 auto;    
-        }
+   		 background: rgba(0,0,0, 0.5);
+    		padding: 20px 25px; 
+    		border-radius: 12px;
+    		display: flex;
+    		flex-direction: column;
+    		height: auto;        /* 確保高度隨內容自動增長 */
+    		min-height: 250px;   /* 給一個最小高度，但不鎖死最大高度 */
+    		overflow: visible;   /* 確保內容超出時不會被隱藏 */
+		   	width: 90%;
+    		margin: 0 auto;
+}
 
-        .message-split {
-            display: flex;
-            gap: 10px;
-            height: 80%;
-        }
+		.message-split {
+    		display: flex;
+    		gap: 10px;
+    		height: auto;        /* 從 80% 改為 auto，防止高度被限制 */
+}
 
         .msg-en, .msg-zh {
             flex: 1;
