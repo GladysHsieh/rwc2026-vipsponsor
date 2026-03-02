@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
     <style>
 body {
-            background-color: #f4f4f4; /* 視窗背景維持簡單底色 */
+            background-color: #f4f4f4; /* 外部底色 */
             margin: 0;
             padding: 40px 20px;
             font-family: 'Noto Sans TC', sans-serif;
@@ -19,15 +19,19 @@ body {
             max-width: 800px;
             margin: 0 auto;
             padding: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-top: 8px solid #003366;
-            
-            /* --- 關鍵修改：將背景圖放入這裡 --- */
-            background-image: url('images/BG.png'); 
+            position: relative;
+            overflow: hidden;
+
+            /* --- 關鍵背景設定 --- */
+            /* 使用 GitHub Raw 絕對路徑，確保大小寫正確為 BG.png */
+            background-image: url('https://raw.githubusercontent.com/GladysHsieh/rwc2026-vipsponsor/main/images/BG.png'); 
             background-repeat: no-repeat;
-            background-position: center bottom; /* 讓 Logo 或裝飾待在底部 */
-            background-size: contain;           /* 確保圖片完整顯示不裁切 */
-            background-color: #ffffff;          /* 圖片以外的地方補白色 */
+            background-position: center center; /* 圖片置中 */
+            background-size: cover;           /* 讓圖片填滿整個框框 */
+            background-color: rgba(255, 255, 255, 0.9); /* 加上半透明白底，確保文字清晰 */
+            background-blend-mode: overlay;    /* 混合模式讓背景圖變淡，更有質感 */
         }
 
         /* ...其餘樣式保持不變... */
