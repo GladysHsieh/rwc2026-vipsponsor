@@ -20,7 +20,7 @@
             background: #ffffff;
             padding: 60px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-top: 8px solid #003366; /* 代表學術莊重的深藍色 */
+            border-top: 8px solid #003366;
         }
         .header {
             text-align: center;
@@ -52,22 +52,50 @@
         .signature {
             text-align: right;
             margin-top: 50px;
+            margin-bottom: 60px;
             font-family: 'Noto Serif TC', serif;
         }
         .signature-line {
             font-size: 18px;
             margin-bottom: 5px;
         }
-        /* 響應式調整 */
+        /* 回條樣式 */
+        .rsvp-section {
+            border-top: 2px dashed #ccc;
+            padding-top: 40px;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+        .rsvp-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #003366;
+        }
+        .rsvp-item {
+            margin-bottom: 20px;
+        }
+        .checkbox-group {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+        .official-link {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+        }
         @media (max-width: 600px) {
             .container { padding: 30px; }
             .header h1 { font-size: 22px; }
             .content { font-size: 16px; }
-        }
-        /* 列印優化 */
-        @media print {
-            body { background: none; padding: 0; }
-            .container { box-shadow: none; border: none; width: 100%; }
         }
     </style>
 </head>
@@ -79,11 +107,8 @@
     </div>
 
     <div class="content">
-        <div class="salutation"> 葛如鈞	立法委員 鈞鑒：</div>
-        
-        <p>2026年真實世界密碼學國際會議（RWC 2026）將於2026年3月9日至3月11日假台北萬豪酒店隆重舉行。Real World Crypto Symposium 為國際密碼學與資訊安全領域極具指標性的年度盛會，匯聚全球頂尖學者與實務專家，深入探討密碼演算法部署挑戰、安全工程實務及真實威脅模型，強調理論與實務並重，致力推動隱私保護、通訊安全與系統防護等關鍵技術之創新與落實。</p>
-
-        <p>為促進國際密碼學技術交流與產學合作，並提升臺灣於全球密碼學領域之能見度與影響力，中央研究院資訊科學研究所密碼學團隊成功爭取本次會議首次於臺灣舉辦。會中除發表各國嚴選優秀論文外，亦邀請國際知名學者發表專題演講，共襄盛舉。</p>
+        <div class="salutation">鈞鑒：</div>
+        <p>2026年真實世界密碼學國際會議（RWC 2026）將於2026年3月9日至3月11日假台北萬豪酒店隆重舉行。Real World Crypto Symposium 為國際密碼學與資訊安全領域極具指標性的年度盛會，匯聚全球頂尖學者與實務專家，致力推動隱私保護、通訊安全與系統防護等關鍵技術之創新與落實。</p>
 
         <div class="highlight">
             <strong>晚宴資訊：</strong><br>
@@ -91,9 +116,7 @@
             地點：台北萬豪酒店五樓萬豪廳（台北市中山區樂群二路199號）
         </div>
 
-        <p>素仰 臺端於資訊安全領域成就斐然，誠摯邀請撥冗蒞臨指導，共同見證此一國際學術盛事。如蒙惠允，不勝榮幸。</p>
-        
-        <p>檢附活動資訊與出席回條，敬祈 賜覆。</p>
+        <p>素仰 臺端於資訊安全領域成就斐然，誠摯邀請撥冗蒞臨指導。檢附活動資訊與出席回條，敬祈 賜覆。如蒙惠允，不勝榮幸。</p>
     </div>
 
     <div class="signature">
@@ -101,7 +124,34 @@
         <br>
         <div class="signature-line">RWC 2026 大會主席 <strong>楊柏因</strong></div>
         <div class="signature-line">RWC 2026 大會主席 <strong>鐘楷閔</strong> 敬邀</div>
-        <div class="signature-line">2026 年 3 月</div>
+    </div>
+
+    <div class="rsvp-section">
+        <div class="rsvp-title">RWC 2026 歡迎晚宴出席意願回條</div>
+        
+        <div class="rsvp-item">
+            煩請就您出席的情況勾選：本人 ___________________________
+        </div>
+
+        <div class="rsvp-item">
+            一、是否出席『2026 年真實世界密碼學國際會議』歡迎晚宴<br>
+            <span style="font-size: 14px; color: #666;">(2026年3月9日 18:45 / 台北萬豪酒店五樓萬豪廳)</span>
+            <div class="checkbox-group">
+                □ 樂意出席 &nbsp;&nbsp;&nbsp;&nbsp; □ 不克出席
+            </div>
+        </div>
+
+        <div class="rsvp-item">
+            二、用餐選擇
+            <div class="checkbox-group">
+                □ 葷食 &nbsp;&nbsp;&nbsp;&nbsp; □ 素食 &nbsp;&nbsp;&nbsp;&nbsp; □ 其他 _________________
+            </div>
+        </div>
+
+        <div class="note">
+            註：敬請填覆所附回條，並以電子郵件寄至 <a href="mailto:gladys@iis.sinica.edu.tw">gladys@iis.sinica.edu.tw</a> 由謝女士收，以利後續安排，至紉公誼。<br>
+            RWC 2026 官方網站：<a href="https://rwc.iacr.org/2026/" class="official-link">https://rwc.iacr.org/2026/</a>
+        </div>
     </div>
 </div>
 
