@@ -6,14 +6,24 @@
     <title>RWC 2026 歡迎晚宴正式邀請函</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 40px 20px;
-            font-family: 'Noto Sans TC', sans-serif;
-            color: #333;
-            line-height: 1.8;
-        }
+       body {
+    /* 1. 加入背景圖 */
+    background-image: url('bg.png'); 
+    
+    /* 2. 設定背景圖屬性 (防止重複、固定位置) */
+    background-repeat: no-repeat;
+    background-position: center top; /* 圖片置中對齊 */
+    background-attachment: fixed;  /* 滾動時背景固定 (視差效果) */
+    background-size: cover;      /* 圖片自動縮放填滿螢幕 */
+    
+    /* 3. 保留原本的設定 (安全底色、邊距、字體) */
+    background-color: #f4f4f4;   /* 當圖片載入失敗時顯示的安全底色 */
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #333;
+    line-height: 1.8;
+}
         .container {
             max-width: 800px;
             margin: 0 auto;
