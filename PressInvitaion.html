@@ -97,8 +97,11 @@
             text-align: center;
             font-size: 10px;
             font-weight: bold;
-            margin-bottom: 8px;
             text-shadow: 1px 1px 2px rgba(0,0,0, 0.9);
+            
+            /* 👇 將原本的 margin-bottom: 8px; 替換成下面這兩行 👇 */
+            width: 85%;              /* 設定跟下方欄位一樣的寬度 */
+            margin: 0 auto 8px auto; /* 讓它置中，同時保留下方 8px 的間距 */
         }
 
         /* --- 核心佈局 --- */
@@ -106,7 +109,11 @@
             display: flex;
             gap: 12px; 
             align-items: stretch; 
-            width: 100%;
+            
+            /* 👇 主要是修改下面這兩行 👇 */
+            width: 85%;       /* 縮小整體寬度 (您可以微調為 80% 或 90%) */
+            margin: 0 auto;   /* 讓這兩個縮窄的欄位「水平置中」 */
+            
             flex: 1;
         }
 
@@ -307,3 +314,4 @@
 
 </body>
 </html>
+
