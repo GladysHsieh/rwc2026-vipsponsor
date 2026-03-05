@@ -47,10 +47,11 @@
         .header img.long { height: 40px; }
 
         /* --- 2. Main Content --- */
-        .main-content {
+.main-content {
             flex: 1;
             position: relative;
-            background-image: url('bg.png'); 
+            /* 👇 這裡加上 images/ 👇 */
+            background-image: url('images/bg.png'); 
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -234,9 +235,7 @@
 <body>
 
 
-    <div class="container">
-        
-        <div class="header">
+<div class="header">
             <img src="images/logo_iacr.png" style="height: 50px;" alt="IACR">
             <img src="images/logo_as.png" style="height: 50px;" alt="Academia Sinica" class="long">
             <img src="images/logo_iis.jpg" style="height: 45px;" alt="IIS">
@@ -245,8 +244,9 @@
             <img src="images/logo_ccisa.jpg" style="height: 55px;" alt="CCISA">
             <img src="images/logo_nstc.png" style="height: 25px;" alt="NSTC" class="long">
             <img src="images/logo_mice.png" style="height: 32px;" alt="MICE" class="long">
-        </div>
-        <div class="main-content">
+        </div> 
+    
+    <div class="main-content">
             
             <div class="title-area">
                 <h1>Real World Crypto Symposium 2026</h1>
@@ -270,12 +270,12 @@
                         <span class="info-value">台北萬豪酒店 5樓<br>萬豪廳</span>
                     </div>
                     
-                    <div class="qr-sig-row">
-                        <img src="qrcode.png" alt="Press Kit QR" class="qr-img">
+<div class="qr-sig-row">
+                        <img src="images/qrcode.png" alt="Press Kit QR" class="qr-img">
                         <div class="signature-block">
                             掃描取得<br>新聞資料與議程
                         </div>
-                    </div>
+                    </div> 
                 </div>
 
                 <div class="message-col">
@@ -306,3 +306,4 @@
 </body>
 
 </html>
+
