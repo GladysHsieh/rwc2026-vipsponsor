@@ -107,19 +107,20 @@
         /* --- 核心佈局 --- */
         .content-row {
             display: flex;
-            gap: 12px; 
+            gap: 12px; align-items: center; 
             
-            /* 👇 1. 將 stretch 改成 center，讓框框只包覆內容本身的高度 */
-            align-items: center; 
+            /* 👇 確保有這行，讓縮小後的兩個欄位一起乖乖待在畫面正中間 */
+            justify-content: center; 
             
-            width: 85%;
-            margin: 0 auto;
+            width: 100%;
             flex: 1;
         }
 
         /* --- 左側：資訊欄 --- */
         .info-col {
             flex: 1; 
+            /* 👇 新增這行：強制限制它的最大寬度 (數字越小就越窄，例如可改為 100px 或 90px) */
+            max-width: 110px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -179,7 +180,9 @@
 
         /* --- 右側：主文欄 --- */
         .message-col {
-            flex: 2.8;
+            flex: 2.2;
+            /* 👇 新增這行：鎖定右邊的最大寬度 (數值可依喜好微調，例如 220px 或 240px) */
+            max-width: 230px;
             display: flex;
         }
 
@@ -315,6 +318,7 @@
 
 </body>
 </html>
+
 
 
 
