@@ -108,12 +108,12 @@
         .content-row {
             display: flex;
             gap: 12px; 
-            align-items: stretch; 
             
-            /* 👇 主要是修改下面這兩行 👇 */
-            width: 85%;       /* 縮小整體寬度 (您可以微調為 80% 或 90%) */
-            margin: 0 auto;   /* 讓這兩個縮窄的欄位「水平置中」 */
+            /* 👇 1. 將 stretch 改成 center，讓框框只包覆內容本身的高度 */
+            align-items: center; 
             
+            width: 85%;
+            margin: 0 auto;
             flex: 1;
         }
 
@@ -185,7 +185,8 @@
 
         .message-box-container {
             background: rgba(0,0,0, 0.5);
-            padding: 10px 12px; 
+            /* 👇 2. 將原本的 padding: 10px 12px; 改小，例如改成上下 8px */
+            padding: 8px 12px;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
@@ -200,7 +201,7 @@
             text-align: justify;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            height: auto;
         }
 
         .msg-p { margin-top: 0; margin-bottom: 4px; }
@@ -314,5 +315,6 @@
 
 </body>
 </html>
+
 
 
