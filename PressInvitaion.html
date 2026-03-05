@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWC 2026 Media Invitation (媒體邀請函)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #555;
+            font-family: 'Noto Sans TC', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            margin: 15px auto;
+        }
+
+        /* --- 1. Header --- */
+        .header {
+            background-color: white;
+            padding: 15px 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .header img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+        .header img.long { height: 40px; }
+
+        /* --- 2. Main Content --- */
+        .main-content {
+            flex: 1;
+            position: relative;
+            background-image: url('bg.png'); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            padding: 15px 35px 35px 35px;
+            color: white;
+            background-color: #222;
+        }
+
+        .title-area {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: #FFD700;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 560;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+            display: inline-block;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 3px;
+            letter-spacing: 2px;
+        }
+
+        /* 致詞區塊 */
+        .salutation-area {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
+        }
+
+        /* --- 核心佈局 --- */
+        .content-row {
+            display: flex;
+            gap: 30px; 
+            align-items: flex-start; 
+            margin-left: 40px; 
+            width: 90%;
+        }
+
+        /* --- 左側：資訊欄 --- */
+        .info-col {
+            flex: 1.5; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(255,255,255, 0.1); 
+            backdrop-filter: blur(5px);
+            padding: 20px; 
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: left;
+            text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
+            height: auto; 
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            font-size: 14px;
+            border-bottom: 1px dashed rgba(255,255,255,0.3);
+            padding-bottom: 15px;
+        }
+        .info-item:last-child { border-bottom: none; margin-bottom: 5px;}
+        
+        .info-label {
+            color: #FFD700;
+            font-weight: 600;
+            font-family: 'Noto Sans TC', sans-serif;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .qr-sig-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .qr-img {
+            width: 90px; 
+            height: 90px; 
+            border-radius: 0; 
+            object-fit: contain;
+            background-color: white;
+            padding: 5px; 
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .signature-block {
+            font-size: 13px;
+            color: #FFD700;
+            line-height: 1.4;
+            font-weight: bold;
+        }
+
+        /* --- 右側：主文欄 --- */
+        .message-col {
+            flex: 2.5;
+        }
+
+        .message-box-container {
+            background: rgba(0,0,0, 0.5);
+            padding: 30px; 
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: 100%; 
+        }
+
+        .msg-zh {
+            font-size: 15.5px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px black;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .msg-p { margin-top: 0; margin-bottom: 10px; }
+        
+        /* 簽名檔樣式 */
+        .msg-signature {
+            margin-top: 25px; 
+            text-align: right;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 15px;
+        }
+
+        /* --- 3. Footer (清空 Logo，僅保留樣式) --- */
+        .footer {
+            background-color: white;
+            padding: 15px 25px;
+            border-top: 5px solid #800000;
+            min-height: 20px; /* 給予一點高度維持視覺平衡 */
+        }
+        
+        /* --- 手寫留白專用框 (半透明霧面) --- */
+        .fill-blank {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.65); 
+            border-radius: 3px;
+            vertical-align: middle;
+            margin: 0 5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.8); 
+        }
+
+        /* --- RWD 手機版調整 --- */
+        @media screen and (max-width: 900px) {
+            .content-row { flex-direction: column-reverse; gap: 30px; margin-left: 0; width: 100%; }
+            .header img { height: 35px !important; } 
+        }
+        
+        @media print {
+             @page { size: landscape; margin: 0; }
+             .container { width: 90%; box-shadow: none; margin: 0; }
+             .main-content { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header">
+            <img src="logo_iacr.png" style="height: 50px;" alt="IACR">
+            <img src="logo_as.png" style="height: 50px;" alt="Academia Sinica" class="long">
+            <img src="logo_iis.jpg" style="height: 45px;" alt="IIS">
+            <img src="logo_citi.jpg" style="height: 45px;" alt="CITI" class="long">
+            <div style="width: 1px; height: 30px; background: #ddd; margin: 0 10px;"></div>
+            <img src="logo_ccisa.jpg" style="height: 55px;" alt="CCISA">
+            <img src="logo_nstc.png" style="height: 25px;" alt="NSTC" class="long">
+            <img src="logo_mice.png" style="height: 32px;" alt="MICE" class="long">
+        </div>
+
+        <div class="main-content">
+            
+            <div class="title-area">
+                <h1>Real World Crypto Symposium 2026</h1>
+                <h2>媒體邀請函</h2>
+            </div>
+
+            <div class="salutation-area">
+                <span class="fill-blank" style="width: 250px; height: 35px;"></span> 媒體先進 鈞啟
+            </div>
+
+            <div class="content-row">
+                
+                <div class="info-col">
+                    <div class="info-item">
+                        <span class="info-label">📅 展會日期</span>
+                        <span class="info-value">2026年3月9日 (一)<br>至 3月11日 (三)</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">📍 地點</span>
+                        <span class="info-value">台北萬豪酒店 5樓<br>萬豪廳</span>
+                    </div>
+                    
+                    <div class="qr-sig-row">
+                        <img src="qrcode.png" alt="Press Kit QR" class="qr-img">
+                        <div class="signature-block">
+                            掃描取得<br>新聞資料與議程
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-col">
+                    <div class="message-box-container">
+                        <div class="msg-zh">
+                            <p class="msg-p">誠摯邀請 <span class="fill-blank" style="width: 160px; height: 22px;"></span> 蒞臨採訪「2026年真實世界密碼學國際會議（RWC 2026）」。</p>
+                            <p class="msg-p">本會議由國際密碼學會（IACR）主辦，為全球最具指標性的應用密碼學與資訊安全盛會。本次大會<b>首度移師臺灣舉辦</b>，將匯聚國內外頂尖學者、產業界專家及政府代表，共同探討前瞻密碼技術於真實世界之應用與防禦挑戰。</p>
+                            <p class="msg-p">您的參與報導將有助於提升社會大眾對資安議題的重視，並向世界展現臺灣在國際產學合作上的亮眼實力與能見度。敬祈 蒞臨採訪指教。</p>
+                            
+                            <div class="msg-signature">
+                                <strong>
+                                楊柏因 Bo-Yin Yang<br>
+                                鐘楷閔 Kai-Min Chung
+                                </strong><br>
+                                <span style="font-size: 13px;">大會共同主席 General Co-Chairs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="footer"></div>
+        
+    </div>
+
+</body>
+</html>
