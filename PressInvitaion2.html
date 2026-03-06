@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWC 2026 Media Invitation (A6 尺寸)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Noto+Sans+TC:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #555;
+            font-family: 'Noto Sans TC', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            min-height: 100vh;
+        }
+
+        /* --- 設定為嚴格的 A6 橫式大小 (148mm x 105mm) --- */
+        .container {
+            width: 148mm;
+            height: 105mm;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            overflow: hidden; /* 防止內容撐破 A6 邊界 */
+            box-sizing: border-box;
+        }
+
+        /* --- 1. Header (Logo 等比例大幅縮小) --- */
+        .header {
+            background-color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .header img {
+            height: 18px; /* 原本 50px */
+            width: auto;
+            object-fit: contain;
+        }
+        .header img.long { height: 14px; }
+
+        /* --- 2. Main Content --- */
+        .main-content {
+            flex: 1; 
+            position: relative;
+            background-image: url('images/bg.png'); 
+            background-size: cover; /* 背景圖會自動適應 A6 大小 */
+            background-position: center center;
+            background-repeat: no-repeat;
+            padding: 8px 15px 12px 15px;
+            color: white;
+            background-color: #222;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-area {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px; /* 原本 30px */
+            font-weight: 600;
+            color: #FFD700;
+            margin: 0 0 4px 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            font-size: 11px; /* 原本 24px */
+            font-weight: 560;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+            display: inline-block;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 2px;
+            letter-spacing: 1px;
+        }
+
+        /* 致詞區塊 */
+        .salutation-area {
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0, 0.9);
+            
+            /* 👇 將原本的 margin-bottom: 8px; 替換成下面這兩行 👇 */
+            width: 85%;              /* 設定跟下方欄位一樣的寬度 */
+            margin: 0 auto 8px auto; /* 讓它置中，同時保留下方 8px 的間距 */
+        }
+
+        /* --- 核心佈局 --- */
+        .content-row {
+            display: flex;
+            gap: 12px; align-items: center; 
+            
+            /* 👇 確保有這行，讓縮小後的兩個欄位一起乖乖待在畫面正中間 */
+            justify-content: center; 
+            
+            width: 100%;
+            flex: 1;
+        }
+
+        /* --- 左側：資訊欄 --- */
+        .info-col {
+            flex: 1; 
+            /* 👇 新增這行：強制限制它的最大寬度 (數字越小就越窄，例如可改為 100px 或 90px) */
+            max-width: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(255,255,255, 0.1); 
+            backdrop-filter: blur(5px);
+            padding: 4px 2px; 
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: left;
+            text-shadow: 1px 1px 2px rgba(0,0,0, 0.9);
+        }
+
+        .info-item {
+            margin-bottom: 6px;
+            font-size: 8px;
+            border-bottom: 1px dashed rgba(255,255,255,0.3);
+            padding-bottom: 6px;
+        }
+        .info-item:last-child { border-bottom: none; margin-bottom: 2px;}
+        
+        .info-label {
+            color: #FFD700;
+            font-weight: 600;
+            font-family: 'Noto Sans TC', sans-serif;
+            display: block;
+            margin-bottom: 3px;
+            font-size: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .qr-sig-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        .qr-img {
+            width: 35px; /* QR Code 縮小 */
+            height: 35px; 
+            border-radius: 0; 
+            object-fit: contain;
+            background-color: white;
+            padding: 2px; 
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .signature-block {
+            font-size: 7px;
+            color: #FFD700;
+            line-height: 1.3;
+            font-weight: bold;
+        }
+
+        /* --- 右側：主文欄 --- */
+        .message-col {
+            flex: 2.2;
+            /* 👇 新增這行：鎖定右邊的最大寬度 (數值可依喜好微調，例如 220px 或 240px) */
+            max-width: 240px;
+            display: flex;
+        }
+
+        .message-box-container {
+            background: rgba(0,0,0, 0.5);
+            /* 👇 2. 將原本的 padding: 10px 12px; 改小，例如改成上下 8px */
+            padding: 12px 16px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            width: 100%; 
+            justify-content: center;
+        }
+
+        .msg-zh {
+            font-size: 8.5px; /* 配合 A6 縮小字體，大約等於 word 的 8.5pt */
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px black;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+
+        .msg-p { margin-top: 0; margin-bottom: 4px; }
+        
+        /* 簽名檔樣式 */
+        .msg-signature {
+            margin-top: auto; 
+            text-align: right;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 6px;
+            font-size: 8px;
+        }
+
+        /* --- 3. Footer --- */
+        .footer {
+            background-color: white;
+            /* 👇 1. 將上下的 padding 調大（例如改成 25px） */
+            padding: 10px 25px; 
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            /* 👇 2. 將 gap 調大（例如設定為 20px 或 25px），讓每排贊助商 Logo 不要黏太緊 */
+            gap: 10px; 
+            
+            border-top: 5px solid #800000;
+        }
+        
+        /* --- 手寫留白專用框 --- */
+        .fill-blank {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.65); 
+            border-radius: 2px;
+            vertical-align: middle;
+            margin: 0 2px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.8); 
+        }
+
+        /* --- Print 列印強制設定為 A6 --- */
+        @media print {
+             @page { 
+                 size: A6 landscape; 
+                 margin: 0; 
+             }
+             body { background-color: white; }
+             .container { box-shadow: none; margin: 0; width: 148mm; height: 105mm; }
+             .main-content { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header">
+            <img src="images/logo_iacr.png" style="height: 25px;"  alt="IACR">
+            <img src="images/logo_as.png" style="height: 25px;"  alt="Academia Sinica" class="long">
+            <img src="images/logo_iis.jpg" style="height: 25px;"  alt="IIS">
+            <img src="images/logo_citi.jpg" style="height: 25px;"  alt="CITI" class="long">
+            <div style="width: 1px; height: 12px; background: #ccc; margin: 0 2px;"></div>
+            <img src="images/logo_ccisa.jpg" style="height: 25px;"  alt="CCISA">
+            <img src="images/logo_nstc.png" style="height: 15px;"  alt="NSTC" class="long">
+            <img src="images/logo_mice.png" style="height: 15px;"  alt="MICE" class="long">
+        </div>
+
+        <div class="main-content">
+            
+            <div class="title-area">
+                <h1>Real World Crypto Symposium 2026</h1>
+                <h2>媒體邀請函</h2>
+            </div>
+
+            <div class="salutation-area">
+                 iThome電腦報資安主筆   黃彥棻   鈞啟
+            </div>
+
+            <div class="content-row">
+                
+                <div class="info-col">
+                    <div class="info-item">
+                        <span class="info-label">📅 展會日期</span>
+                        <span class="info-value">2026年3月9日 (一)<br>至 3月11日 (三)</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">📍 地點</span>
+                        <span class="info-value">台北萬豪酒店 5樓<br>萬豪廳</span>
+                    </div>
+                    
+                    <div class="qr-sig-row">
+                        <img src="images/qrcode.png" alt="Press Kit QR" class="qr-img">
+                        <div class="signature-block">
+                            掃描取得<br>議程
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-col">
+                    <div class="message-box-container">
+                        <div class="msg-zh">
+                            <p class="msg-p">誠摯邀請 iThome 蒞臨採訪「2026年真實世界密碼學國際會議（RWC 2026）」。</p>
+                            <br>
+                            <p class="msg-p">本會議由國際密碼學會（IACR）主辦，為全球具指標性之應用密碼學盛會。本次大會<b>首度移師臺灣舉辦</b>，將匯聚國內外學者、業界專家及政府代表，探討前瞻技術於真實世界之應用與防禦挑戰。</p>
+                            <p class="msg-p">您的報導將提升社會對資安議題的重視，並向世界展現臺灣在產學合作上的亮眼實力。敬祈 蒞臨採訪指教。</p>
+                            
+                            <div class="msg-signature">
+                                <strong>楊柏因 Bo-Yin Yang &nbsp;|&nbsp; 鐘楷閔 Kai-Min Chung</strong><br>
+                                <span style="font-size: 7px;">大會共同主席 General Co-Chairs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="footer"></div>
+        
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
